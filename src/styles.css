@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/rubik-regular-webfont.woff2') format('woff2'),
+    url('./assets/fonts/rubik-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/rubik-medium-webfont.woff2') format('woff2'),
+    url('./assets/fonts/rubik-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/rubik-bold-webfont.woff2') format('woff2'),
+    url('./assets/fonts/rubik-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --bg: gold;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik";
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--bg);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  :first-child {
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-weight: 500;
+    }
+  }
+
+  button {
+    border: none;
+    background: none;
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    &+button {
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      border-bottom: 3px solid black;
+      margin-bottom: -3px;
+      cursor: pointer;
+    }
+  }
+}
+
+#content {
+  flex: 1;
+  background-image: url('./assets/background.webp');
+  background-color: rgba(0, 0, 0, .5);
+  background-blend-mode: multiply;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  color: white;
+
+  &>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      margin-bottom: 0;
+      font-size: 4rem;
+      color: gold;
+    }
+
+    hr {
+      margin-top: 0;
+      width: 100%;
+      border: 3px solid #ffffff50;
+      border-radius: 2px;
+    }
+
+    &>div {
+      width: 100%;
+      display: flex;
+
+      button {
+        border: 0;
+        background: transparent;
+        color: gold;
+        outline: 3px solid gold;
+        font: inherit;
+        font-weight: 500;
+        font-size: 1.1rem;
+        padding: 15px 0;
+        border-radius: 5px;
+        cursor: pointer;
+
+        flex: 1;
+
+        &+button {
+          margin-left: 1rem;
+        }
+
+        &:hover {
+          outline: 5px solid #ffffff50;
+        }
+      }
+    }
+  }
+}
