@@ -2,6 +2,7 @@ import "./home.css";
 
 const homeComponent = (onMenuClick, onReserveClick) => {
   const containerDiv = document.createElement("div");
+  containerDiv.classList.add("home-container");
 
   const h1 = document.createElement("h1");
   h1.textContent = "ODIN RESTAURANT";

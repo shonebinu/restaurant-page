@@ -1,12 +1,49 @@
 .cards {
+  padding: 3rem;
+  width: 65%;
+  margin-top: 3rem;
+
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  background: #FFFFFF50;
+  gap: 2rem;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  border-radius: 5px;
 
   .card {
+    color: black;
+    padding: 1rem;
+    padding-bottom: 0;
+    border-radius: 5px;
+    background: gold;
+    outline: 2px solid black;
+
     img {
-      width: 100px;
-      aspect-ratio: 1;
+      width: 100%;
+      height: auto;
+    }
+
+    hr {
+      width: 100%;
+      border: 1px solid #FFFFFF99;
+      border-radius: 2px;
+    }
+
+    div {
+      p:first-child {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1.15rem;
+      }
+
+      p:nth-child(2) {
+        margin-top: 5px;
+
+        &::before {
+          content: "$ ";
+        }
+      }
     }
   }
 }

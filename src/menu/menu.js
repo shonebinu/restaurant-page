@@ -9,13 +9,20 @@ const createCard = (menuItem) => {
   itemImage.src = menuItem.img;
   cardDiv.appendChild(itemImage);
 
+  cardDiv.appendChild(document.createElement("hr"));
+
   const itemName = document.createElement("p");
   itemName.textContent = menuItem.name;
-  cardDiv.appendChild(itemName);
 
   const itemPrice = document.createElement("p");
   itemPrice.textContent = menuItem.price;
-  cardDiv.appendChild(itemPrice);
+
+  const cardDetails = document.createElement("div");
+
+  cardDetails.appendChild(itemName);
+  cardDetails.appendChild(itemPrice);
+
+  cardDiv.appendChild(cardDetails);
 
   return cardDiv;
 };

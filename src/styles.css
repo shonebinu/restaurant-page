@@ -78,4 +78,9 @@ header {
   background-color: rgba(0, 0, 0, .5);
   background-blend-mode: multiply;
   background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
