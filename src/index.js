@@ -1,15 +1,24 @@
 import { homeComponent } from "./home/home";
+import { menuComponent } from "./menu/menu";
 import "./styles.css";
 
-const elements = {
-  content: document.querySelector("#content"),
-  homeButton: document.querySelector(".home"),
-  menuButton: document.querySelector(".menu"),
-  contactButton: document.querySelector(".contact"),
+// encapsulate loadhome and functions like that, alongside data into an IIFE, and call these fns from there only
+
+const content = document.querySelector("#content");
+const homeButton = document.querySelector(".home");
+const menuButton = document.querySelector(".menu");
+const contactButton = document.querySelector(".contact");
+
+const displayHome = () => {
+  content.innerHTML = "";
+  content.appendChild(homeComponent(displayMenu, displayContact));
 };
 
-const loadHome = () => elements.content.appendChild(homeComponent(loadMenu, loadContact));
-const loadMenu = () => console.log("menu");
-const loadContact = () => console.log("contact");
+const displayMenu = () => {
+  content.innerHTML = "";
+  content.appendChild(menuComponent());
+};
 
-loadHome();
+const displayContact = () => console.log("contact");
+
+displayMenu();
