@@ -1,0 +1,42 @@
+.contact-container {
+  padding: 3rem;
+  width: 65%;
+  margin-top: -5rem;
+  border-radius: 5px;
+  background: #FFFFFF30;
+
+  .contact-h2 {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    text-decoration: underline;
+    margin-bottom: 3rem;
+  }
+
+  >div {
+
+    display: grid;
+    gap: 2rem;
+    grid-template: 1fr 1fr / 1fr 1fr;
+
+    .card {
+      color: black;
+      padding: 1rem;
+      border-radius: 5px;
+      background: gold;
+      outline: 2px solid black;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-top: 5px;
+      }
+    }
+
+    .location {
+      grid-area: 1 / 2 / -1 / -1;
+    }
+  }
+}

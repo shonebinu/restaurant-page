@@ -42,6 +42,10 @@ header {
   justify-content: space-around;
   align-items: center;
 
+  .logo {
+    cursor: pointer;
+  }
+
   :first-child {
     h1 {
       margin-bottom: 0;
@@ -77,10 +81,11 @@ header {
   background-image: url('./assets/images/backgrounds/background.jpg');
   background-color: rgba(0, 0, 0, .5);
   background-blend-mode: multiply;
-  background-size: cover;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  min-height: 100vh;
 }

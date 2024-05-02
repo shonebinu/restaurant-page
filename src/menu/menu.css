@@ -2,10 +2,9 @@
   padding: 3rem;
   width: 65%;
   margin-top: 3rem;
-
+  background: #FFFFFF30;
 
   display: grid;
-  background: #FFFFFF50;
   gap: 2rem;
 
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -26,11 +25,13 @@
 
     hr {
       width: 100%;
-      border: 1px solid #FFFFFF99;
+      border: 1px solid #00000099;
       border-radius: 2px;
     }
 
     div {
+      padding-left: 7px;
+
       p:first-child {
         margin-top: 0;
         margin-bottom: 0;
@@ -39,9 +40,11 @@
 
       p:nth-child(2) {
         margin-top: 5px;
+        font-weight: 500;
 
         &::before {
           content: "$ ";
+          font-weight: bold;
         }
       }
     }

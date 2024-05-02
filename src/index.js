@@ -1,24 +1,42 @@
+import { contactComponent } from "./contact/contact";
 import { homeComponent } from "./home/home";
 import { menuComponent } from "./menu/menu";
 import "./styles.css";
 
-// encapsulate loadhome and functions like that, alongside data into an IIFE, and call these fns from there only
+const app = (() => {
+  const contentContainer = document.querySelector("#content");
+  const logoDiv = document.querySelector(".logo");
+  const homeButton = document.querySelector(".home");
+  const menuButton = document.querySelector(".menu");
+  const contactButton = document.querySelector(".contact");
 
-const content = document.querySelector("#content");
-const homeButton = document.querySelector(".home");
-const menuButton = document.querySelector(".menu");
-const contactButton = document.querySelector(".contact");
+  const displayHome = () => {
+    contentContainer.innerHTML = "";
+    contentContainer.appendChild(homeComponent(displayMenu, displayContact));
+  };
 
-const displayHome = () => {
-  content.innerHTML = "";
-  content.appendChild(homeComponent(displayMenu, displayContact));
-};
+  const displayMenu = () => {
+    contentContainer.innerHTML = "";
+    contentContainer.appendChild(menuComponent());
+  };
 
-const displayMenu = () => {
-  content.innerHTML = "";
-  content.appendChild(menuComponent());
-};
+  const displayContact = () => {
+    contentContainer.innerHTML = "";
+    contentContainer.appendChild(contactComponent());
+  };
 
-const displayContact = () => console.log("contact");
+  const init = () => {
+    logoDiv.addEventListener("click", displayHome);
+    homeButton.addEventListener("click", displayHome);
+    menuButton.addEventListener("click", displayMenu);
+    contactButton.addEventListener("click", displayContact);
 
-displayMenu();
+    displayHome();
+  };
+
+  return {
+    init,
+  };
+})();
+
+app.init();
